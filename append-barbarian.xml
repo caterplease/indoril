@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Barbarian</name>
+        <description>The Barbarian additions to the Realms of Indoril game series.</description>
+        <update version="1.0.0">
+            <file name="append-barbarian.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-barbarian.xml" />
+        </update>
+    </info>
+    <!--
+        Allow selecting the Realms of Indoril
+        Homebrew Rules, which will activate all relevant features.
+    -->
+    <append name="Barbarian" type="Class" source="Realms of Indoril" id="ID_WOTC_PHB_CLASS_BARBARIAN">
+        <rules>
+
+            <select type="Feat" name="Realms of Indoril Rules" supports="ID_ROI_RULES_BARBARIAN" optional="true" />
+        </rules>
+    </append>
+    <!--
+        Specific feat displaying the actual homebrew being added with Indoril
+        rules, including HTML for formatting.
+    -->
+    <element name="Realms of Indoril Rules (Barbarian)" type="Feat" source="Realms of Indoril" id="ID_ROI_RULES_BARBARIAN">
+        <supports>ID_ROI_RULES_BARBARIAN</supports>
+        <requirements>!ID_ROI_RULES</requirements>
+        <description>
+            <p>Update your class to be compatible with the <strong>Realms of Indoril</strong> series of games. This will replace certain class features, add new ones, and augment existing ones.</p>
+
+            <div element="ID_ROI_CLASS_FEATURE_BARBARIAN_RELENTLESS_MOMENTUM" />
+            <div element="ID_ROI_CLASS_FEATURE_BARBARIAN_PRIMAL_DEFIANCE" />
+            <div element="ID_ROI_CLASS_FEATURE_BARBARIAN_IMPROVED_EXTRA_ATTACK" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <!-- REPLACEMENTS -->
+            <grant type="Class Feature" id="ID_INTERNAL_FEATURE_REPLACEMENT_BARBARIAN_EXTRA_ATTACK" />
+            <!-- ADDITIONS -->
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_BARBARIAN_RELENTLESS_MOMENTUM" level="1" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_BARBARIAN_PRIMAL_DEFIANCE" level="9" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_BARBARIAN_IMPROVED_EXTRA_ATTACK" level="5" />
+        </rules>
+    </element>
+
+    <element name="Relentless Momentum" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_BARBARIAN_RELENTLESS_MOMENTUM">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_BARBARIAN_RELENTLESS_MOMENTUM</requirements>
+        <description>
+            <p>Starting at 1st level, when your <strong>Rage</strong> is active, your speed increases by <strong>10 feet</strong>, your movement does not provoke opportunity attacks, and your melee weapon attacks deal bonus damage equal to your proficiency bonus.</p>
+        </description>
+        <sheet>
+            <description>
+                <p>When your <strong>Rage</strong> is active, your speed increases by <strong>10 feet</strong>, your movement does not provoke opportunity attacks, and your melee weapon attacks deal bonus damage equal to your proficiency bonus.</p>
+            </description>
+        </sheet>
+    </element>
+    <element name="Primal Defiance" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_BARBARIAN_PRIMAL_DEFIANCE">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_BARBARIAN_PRIMAL_DEFIANCE</requirements>
+        <description>
+            <p>Starting at 9th level, when your <strong>Rage</strong> is active, you become almost impossible to restrain, terrify, or overwhelm.</p>
+            <p>Once per long rest, while raging, when you fail a saving throw against being <strong>charmed</strong>,                <strong>frightened</strong>,                <strong>paralyzed</strong>,                <strong>restrained</strong>, or <strong>stunned</strong>, you can choose to succeed instead.</p>
+            <p>Additionally, while your <strong>Rage</strong> is active, you add your <em>Constitution</em> modifier to the result of any saving throw you make.</p>
+            <p>At 13th level, the number of times you can use this feature increases to twice per long rest.</p>
+            <p>At 17th level, the number of times you can use this feature increases to three times per long rest.</p>
+        </description>
+        <sheet>
+            <description usage="{{primal defiance:count}}/Long Rest">
+                <p>When your <strong>Rage</strong> is active, you become almost impossible to restrain, terrify, or overwhelm.</p>
+                <p>Once per long rest, while raging, when you fail a saving throw against being <strong>charmed</strong>,                    <strong>frightened</strong>,                    <strong>paralyzed</strong>,                    <strong>restrained</strong>, or <strong>stunned</strong>, you can choose to succeed instead.</p>
+                <p>Additionally, while your <strong>Rage</strong> is active, you add your <em>Constitution</em> modifier to the result of any saving throw you make.</p>
+            </description>
+        </sheet>
+        <rules>
+            <stat name="primal defiance:count" value="1" level="9" />
+            <stat name="primal defiance:count" value="2" level="13" />
+            <stat name="primal defiance:count" value="3" level="17" />
+        </rules>
+    </element>
+
+    <element name="Extra Attack" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_BARBARIAN_IMPROVED_EXTRA_ATTACK">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_BARBARIAN_IMPROVED_EXTRA_ATTACK</requirements>
+        <description>
+            <p>Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.</p>
+            <p>This increases to three times at 11th level</p>
+        </description>
+        <sheet>
+            <description level="5">Test You can attack twice, instead of once, whenever you take the Attack action on your turn.</description>
+            <description level="11">You can attack three times, instead of once, whenever you take the Attack action on your turn.</description>
+        </sheet>
+        <rules>
+            <stat name="extra attack:count" value="2" level="5" bonus="extra attack" />
+            <stat name="extra attack:count" value="3" level="11" bonus="extra attack" />
+        </rules>
+    </element>
+</elements>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Fighter</name>
+        <description>The Fighter additions to the Realms of Indoril game series.</description>
+        <update version="1.0.0">
+            <file name="append-fighter.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-fighter.xml" />
+        </update>
+    </info>
+    <!--
+        Allow selecting the Realms of Indoril
+        Homebrew Rules, which will activate all relevant features.
+    -->
+    <append name="Fighter" type="Class" source="Realms of Indoril" id="ID_WOTC_PHB_CLASS_FIGHTER">
+        <rules>
+
+            <select type="Feat" name="Realms of Indoril Rules" supports="ID_ROI_RULES_FIGHTER" optional="true" />
+        </rules>
+    </append>
+    <!--
+        Specific feat displaying the actual homebrew being added with Indoril
+        rules, including HTML for formatting.
+    -->
+    <element name="Realms of Indoril Rules (Fighter)" type="Feat" source="Realms of Indoril" id="ID_ROI_RULES_FIGHTER">
+        <supports>ID_ROI_RULES_FIGHTER</supports>
+        <requirements>!ID_ROI_RULES</requirements>
+        <description>
+            <p>Update your class to be compatible with the <strong>Realms of Indoril</strong> series of games. This will replace certain class features, add new ones, and augment existing ones.</p>
+            <div element="ID_ROI_CLASS_FEATURE_FIGHTER_WEAPON_MASTERY" />
+            <div element="ID_ROI_CLASS_FEATURE_FIGHTER_MAINTENANCE" />
+            <div element="ID_ROI_CLASS_FEATURE_FIGHTER_VETERANS_RESOLVE" />
+            <div element="ID_ROI_CLASS_FEATURE_FIGHTER_PRESS_THE_ATTACK" />
+            <div element="ID_ROI_CLASS_FEATURE_FIGHTER_TRUE_INDOMITABLE" />
+            <div element="ID_ROI_CLASS_FEATURE_FIGHTER_WARRIORS_RESPITE" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <!-- REPLACEMENTS -->
+            <grant type="Class Feature" id="ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_SECOND_WIND" level="3" />
+            <!-- ADDITIONS -->
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_FIGHTER_WEAPON_MASTERY" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_FIGHTER_MAINTENANCE" level="3" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_FIGHTER_VETERANS_RESOLVE" level="3" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_FIGHTER_PRESS_THE_ATTACK" level="3" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_FIGHTER_TRUE_INDOMITABLE" level="11" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_FIGHTER_WARRIORS_RESPITE" level="13" />
+        </rules>
+    </element>
+    <!--
+        WEAPON MASTERY
+    -->
+    <element name="Weapon Mastery" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_FIGHTER_WEAPON_MASTERY">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_WEAPON_MASTERY</requirements>
+        <description>
+            <p>Your training with weapons allows you to use the mastery properties of three kinds of Simple or Martial weapons of your choice. Whenever you finish a Long Rest, you can practice weapon drills and change one of those weapon choices.</p>
+            <p class="indent">When you reach certain Fighter levels, you gain the ability to use the mastery properties of more kinds of weapons, as shown in the Weapon Mastery column of the Fighter Features table. </p>
+        </description>
+        <sheet alt="Weapon Mastery">
+            <description>Whenever you finish a Long Rest, you can change one of the weapons you previously chosen for a different one. </description>
+        </sheet>
+        <rules>
+            <select type="Class Feature" name="Weapon Mastery (Fighter 1)" level="1" supports="ID_ROI_WEAPON_MASTERY" number="3"/>
+            <select type="Class Feature" name="Weapon Mastery (Fighter 4)" level="4" supports="ID_ROI_WEAPON_MASTERY" />
+            <select type="Class Feature" name="Weapon Mastery (Fighter 10)" level="10" supports="ID_ROI_WEAPON_MASTERY" />
+            <select type="Class Feature" name="Weapon Mastery (Fighter 16)" level="16" supports="ID_ROI_WEAPON_MASTERY" />
+        </rules>
+    </element>
+    <!-- 
+        MAINTENANCE
+    -->
+    <element name="Maintenance" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_FIGHTER_MAINTENANCE">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_MAINTENANCE</requirements>
+        <description>
+            <p>During a short rest, long rest, or 1 hour of downtime, you can sharpen, repair, and maintain your gear. You can maintain a number of pieces of gear equal to your proficiency bonus.</p>
+            <p class="indent">A maintained item grants its benefit until you finish your next long rest. You can spend time during a long rest to maintain gear that was already maintained.</p>
+            <h3>Maintained Weapon</h3>
+            <p>When you hit with a maintained weapon, you can cause the attack to deal extra damage to equal to one roll of your <strong>Maintenance Die</strong> this extra damage is the same type as the weapon.</p>
+            <p class="indent">The extra damage from this feature is not doubled on a critical hit.</p>
+            <p class="indent">Starting at 10th level, when you deal extra damage with this feature, you can choose for the extra damage to be fire or cold damage instead of the weapon's normal damage type.</p>
+            <table class="class-features">
+                <thead>
+                    <tr>
+                        <td class="col-5">Level</td>
+                        <td class="left">Example</td>
+                    </tr>
+                </thead>
+                <tr>
+                    <td> 1st</td>
+                    <td class="left">1d4</td>
+                </tr>
+                <tr>
+                    <td> 8th</td>
+                    <td class="left">1d6</td>
+                </tr>
+                <tr>
+                    <td> 12th</td>
+                    <td class="left">1d8</td>
+                </tr>
+                <tr>
+                    <td> 16th</td>
+                    <td class="left">1d10</td>
+                </tr>
+            </table>
+            <h3>Maintained Armor</h3>
+            <p>While weaing maintained armor, you gain a +1 bonus to AC.</p>
+            <p>Starting at 12th level, this bonus increases to +2.</p>
+            <p>Starting at 16th level, when you maintain armor, choose one damage type other than psychic damage. While wearing that armor, you have resistance to the chosen damage type.</p>
+            <p>One medium or heavy armor made primary of metal can be maintained in this way.</p>
+        </description>
+        <sheet alt="Maintenance">
+            <description>You have a maintenance dice of 1d{{fighter-maintenance:dice}}</description>
+        </sheet>
+        <rules>
+            <stat name="fighter-maintenance:dice" value="4" bonus="maintenance dice" level="1" />
+            <stat name="fighter-maintenance:dice" value="6" bonus="maintenance dice" level="8" />
+            <stat name="fighter-maintenance:dice" value="8" bonus="maintenance dice" level="12" />
+            <stat name="fighter-maintenance:dice" value="12" bonus="maintenance dice" level="16" />
+        </rules>
+    </element>
+    <!--
+        VETERAN'S RESOLVE
+    -->
+    <element name="Veteran's Resolve" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_FIGHTER_VETERANS_RESOLVE">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_VETERANS_RESOLVE</requirements>
+        <description>
+            <p>Starting at 3rd level, you have <strong>3 uses</strong> of <strong>Second Wind</strong>.
+            </p>
+            <p class="indent">You may regain <strong>one expended use</strong> after a short or long rest.</p>
+        </description>
+        <sheet alt="Second Wind" action="Bonus Action" usage="{{second wind:usage}}/Rest">
+            <description>
+                <p>You regain 1d10+{{level:fighter}} hp.</p>
+                <p>You may regain 1 charge on a short or long rest.</p>
+            </description>
+        </sheet>
+        <rules>
+            <stat name="second wind:usage" value="3" bonus="base" level="3" />
+        </rules>
+    </element>
+    <!--
+        PRESS THE ATTACK
+    -->
+    <element name="Press the Attack" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_FIGHTER_PRESS_THE_ATTACK">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_PRESS_THE_ATTACK</requirements>
+        <description>
+            <p>Starting at 3rd level, once per turn when you take the <strong>Attack</strong> action, you can expend one use of <strong>Second Wind</strong> to make <strong>one additional attack</strong> as part of that action.</p>
+        </description>
+        <sheet action="Attack" usage="1/Turn">
+            <description>
+                <p>You may use charges of Second Wind to perform an extra attack.</p>
+            </description>
+        </sheet>
+    </element>
+    <!--
+        TRUE INDOMITABLE
+    -->
+    <element name="True Indomitable" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_FIGHTER_TRUE_INDOMITABLE">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_TRUE_INDOMITABLE</requirements>
+        <description>
+            <p>Starting at 11th level, your willpower hardens against effects that would break lesser warriors.</p>
+            <p>When you use <strong>Indomitable</strong> and still fail the saving throw, you can choose to succeed instead.</p>
+            <p>Once you use Indomitable in this way, you cannot do so again until you finish a long rest.</p>
+        </description>
+        <sheet action="Save" usage="1/Long Rest">
+            <description>
+                <p>You may choose to succeed with <strong>Indomitable</strong>.
+                </p>
+            </description>
+        </sheet>
+    </element>
+    <!--
+        WARRIOR'S RESPITE
+    -->
+    <element name="Warrior's Respite" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_FIGHTER_WARRIORS_RESPITE">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_WARRIORS_RESPITE</requirements>
+        <description>
+            <p>Starting at 13th level, you regain all uses of Second Wind when you finish a long rest.</p>
+        </description>
+        <sheet usage="Long Rest">
+            <description>
+                <p>You regain all uses of Second Wind when you finish a long rest.
+                </p>
+            </description>
+        </sheet>
+    </element>
+</elements>

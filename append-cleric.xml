@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Cleric</name>
+        <description>The Cleric additions to the Realms of Indoril game series.</description>
+        <update version="1.0.0">
+            <file name="append-cleric.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-cleric.xml" />
+        </update>
+    </info>
+    <!--
+        Allow selecting the Realms of Indoril
+        Homebrew Rules, which will activate all relevant features.
+    -->
+    <append name="Cleric" type="Class" source="Realms of Indoril" id="ID_WOTC_PHB_CLASS_CLERIC">
+        <rules>
+
+            <select type="Feat" name="Realms of Indoril Rules" supports="ID_ROI_RULES_CLERIC" optional="true" />
+        </rules>
+    </append>
+    <!--
+        Specific feat displaying the actual homebrew being added with Indoril
+        rules, including HTML for formatting.
+    -->
+    <element name="Realms of Indoril Rules (Cleric)" type="Feat" source="Realms of Indoril" id="ID_ROI_RULES_CLERIC">
+        <supports>ID_ROI_RULES_CLERIC</supports>
+        <requirements>!ID_ROI_RULES</requirements>
+        <description>
+            <p>Update your class to be compatible with the <strong>Realms of Indoril</strong> series of games. This will replace certain class features, add new ones, and augment existing ones.</p>
+            <div element="ID_ROI_CLASS_FEATURE_CLERIC_SPELLCASTING" />
+            <div element="ID_ROI_CLASS_FEATURE_CLERIC_SACRED_CALLING" />
+            <div element="ID_ROI_CLASS_FEATURE_CLERIC_DIVINE_COMMUNION" />
+            <div element="ID_ROI_CLASS_FEATURE_CLERIC_GREATER_CHANNEL_DIVINITY" />
+            <div element="ID_ROI_CLASS_FEATURE_CLERIC_SUPREME_DIVINE_INTERVENTION" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <!-- REPLACEMENTS -->
+            <!-- ADDITIONS -->
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_CLERIC_SPELLCASTING" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_CLERIC_SACRED_CALLING" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_CLERIC_DIVINE_COMMUNION" level="9" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_CLERIC_GREATER_CHANNEL_DIVINITY" level="11" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_CLERIC_SUPREME_DIVINE_INTERVENTION" level="20" />
+        </rules>
+    </element>
+
+
+    <element name="Spellcasting" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_CLERIC_SPELLCASTING">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_SPELLCASTING</requirements>
+        <description>
+            <p>The number of spells you may prepare increases by <strong>4</strong>
+            </p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <stat name="cleric:spellcasting:prepare" value="4" />
+        </rules>
+    </element>
+
+    <element name="Sacred Calling" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_CLERIC_SACRED_CALLING">
+        <requirements>!ID_INTERNAL_ROI_FEATURE_REPLACEMENT_CLERIC_SACRED_CALLING</requirements>
+        <description>
+            <p>At 1st level, your divine connection strengthens your role as a servant of your deity. You gain one of the following.</p>
+            <p class="indent">
+                <em>
+                    <strong>Divine Acolyte.</strong>
+                </em> You gain proficiency in Religion. If you already have proficiency in Religion, you gain proficiency in one of the following skills instead: History, Insight, Medicine, or Persuasion.</p>
+            <p class="indent">
+                <em>
+                    <strong>Temple Guardian.</strong>
+                </em> You gain proficiency with martial weapons or heavy armor. You can only choose one.</p>
+            <p class="indent">
+                <em>
+                    <strong>Blessed Healer.</strong>
+                </em> When you restore hit points to a creature using a Cleric spell of 1st level or higher, that creature gains temporary hit points equal to your Wisdom modifier.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <select type="Class Feature" name="Sacred Calling" supports="Sacred Calling" number="1" />
+        </rules>
+    </element>
+    <!-- 
+        DIVINE ACOLYTE
+    -->
+    <element name="Divine Acolyte" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_CLERIC_SACRED_CALLING_DIVINE_ACOLYTE">
+        <supports>Sacred Calling</supports>
+        <requirements>!ID_INTERNAL_ROI_FEATURE_REPLACEMENT_CLERIC_SACRED_CALLING_DIVINE_ACOLYTE</requirements>
+        <description>
+            <p>You gain proficiency in Religion. If you already have proficiency in Religion, you gain proficiency in one of the following skills instead: History, Insight, Medicine, Persuasion.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <select type="Proficiency" name="Skill Proficiency (Divine Acolyte)" supports="ID_ROI_SACRED_CALLING_CLERIC_ACOLYTE"/>
+        </rules>
+    </element>
+    <element name="Religion" type="Proficiency" source="Realms of Indoril" id="ID_ROI_PROFICIENCY_SKILL_RELIGION">
+        <supports>ID_ROI_SACRED_CALLING_CLERIC_ACOLYTE</supports>
+        <requirements>!ID_PROFICIENCY_SKILL_RELIGION,ID_ROI_CLASS_FEATURE_CLERIC_SACRED_CALLING_DIVINE_ACOLYTE</requirements>
+        <description>
+            <p>Your Intelligence (Religion) check measures your ability to recall lore about deities, rites and prayers, religious hierarchies, holy symbols, and the practices of secret cults.</p>
+        </description>
+        <rules>
+            <stat name="religion:proficiency" value="proficiency" bonus="proficiency" />
+        </rules>
+    </element>
+    <element name="History" type="Proficiency" source="Realms of Indoril" id="ID_ROI_CLERIC_SACRED_CALLING_DIVINE_ACOLYTE_PROFICIENCY_SKILL_HISTORY">
+        <supports>ID_ROI_SACRED_CALLING_CLERIC_ACOLYTE</supports>
+        <requirements>ID_PROFICIENCY_SKILL_RELIGION,ID_ROI_CLASS_FEATURE_CLERIC_SACRED_CALLING_DIVINE_ACOLYTE</requirements>
+        <description>
+            <p>Your Intelligence (History) check measures your ability to recall lore about historical events, legendary people, ancient kingdoms, past disputes, recent wars, and lost civilizations.</p>
+        </description>
+        <rules>
+            <stat name="history:proficiency" value="proficiency" bonus="proficiency" />
+        </rules>
+    </element>
+    <element name="Insight" type="Proficiency" source="Realms of Indoril" id="ID_ROI_CLERIC_SACRED_CALLING_DIVINE_ACOLYTE_PROFICIENCY_SKILL_INSIGHT">
+        <supports>ID_ROI_SACRED_CALLING_CLERIC_ACOLYTE</supports>
+        <requirements>ID_PROFICIENCY_SKILL_RELIGION,ID_ROI_CLASS_FEATURE_CLERIC_SACRED_CALLING_DIVINE_ACOLYTE</requirements>
+        <description>
+            <p>Your Wisdom (Insight) check decides whether you can determine the true intentions of a creature, such as when searching out a lie or predicting someone’s next move. Doing so involves gleaning clues from body language, speech habits, and changes in mannerisms.</p>
+        </description>
+        <rules>
+            <stat name="insight:proficiency" value="proficiency" bonus="proficiency" />
+        </rules>
+    </element>
+    <element name="Medicine" type="Proficiency" source="Realms of Indoril" id="ID_ROI_CLERIC_SACRED_CALLING_DIVINE_ACOLYTE_PROFICIENCY_SKILL_MEDICINE">
+        <supports>ID_ROI_SACRED_CALLING_CLERIC_ACOLYTE</supports>
+        <requirements>ID_PROFICIENCY_SKILL_RELIGION,ID_ROI_CLASS_FEATURE_CLERIC_SACRED_CALLING_DIVINE_ACOLYTE</requirements>
+        <description>
+            <p>A Wisdom (Medicine) check lets you try to stabilize a dying companion or diagnose an illness.</p>
+        </description>
+        <rules>
+            <stat name="medicine:proficiency" value="proficiency" bonus="proficiency" />
+        </rules>
+    </element>
+    <element name="Persuasion" type="Proficiency" source="Realms of Indoril" id="ID_ROI_CLERIC_SACRED_CALLING_DIVINE_ACOLYTE_PROFICIENCY_SKILL_PERSUASION">
+        <supports>ID_ROI_SACRED_CALLING_CLERIC_ACOLYTE</supports>
+        <requirements>ID_PROFICIENCY_SKILL_RELIGION,ID_ROI_CLASS_FEATURE_CLERIC_SACRED_CALLING_DIVINE_ACOLYTE</requirements>
+        <description>
+            <p>When you attempt to influence someone or a group of people with tact, social graces, or good nature, the GM might ask you to make a Charisma (Persuasion) check. Typically, you use persuasion when acting in good faith, to foster friendships, make cordial requests, or exhibit proper etiquette. Examples of persuading others include convincing a chamberlain to let your party see the king, negotiating peace between warring tribes, or inspiring a crowd of townsfolk.</p>
+        </description>
+        <rules>
+            <stat name="persuasion:proficiency" value="proficiency" bonus="proficiency" />
+        </rules>
+    </element>
+    <!-- 
+        TEMPLE GUARDIAN
+    -->
+    <element name="Temple Guardian" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_CLERIC_SACRED_CALLING_TEMPLE_GUARDIAN">
+        <supports>Sacred Calling</supports>
+        <requirements>!ID_INTERNAL_ROI_FEATURE_REPLACEMENT_CLERIC_SACRED_CALLING_TEMPLE_GUARDIAN</requirements>
+        <description>
+            <p>You gain proficiency with martial weapons or heavy armor. You can only choose one.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <select type="Proficiency" name="Skill Proficiency (Temple Guardian)" supports="ID_ROI_SACRED_CALLING_CLERIC_TEMPLE_GUARDIAN"/>
+        </rules>
+    </element>
+    <element name="Armor Proficiency (Heavy Armor)" type="Proficiency" source="Realms of Indoril" id="ID_ROI_CLERIC_SACRED_CALLING_TEMPLE_GUARDIAN_PROFICIENCY_HEAVY_ARMOR">
+        <supports>ID_ROI_SACRED_CALLING_CLERIC_TEMPLE_GUARDIAN</supports>
+        <description>
+            <p>Of all the armor categories, heavy armor offers the best protection. These suits of armor cover the entire body and are designed to stop a wide range of attacks. Only proficient warriors can manage their weight and bulk.</p>
+            <p class="indent">Heavy armor doesn’t let you add your Dexterity modifier to your Armor Class, but it also doesn’t penalize you if your Dexterity modifier is negative.</p>
+        </description>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_RING_MAIL" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_CHAIN_MAIL" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SPLINT" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_PLATE" />
+        </rules>
+    </element>
+    <element name="Weapon Proficiency (Martial Weapons)" type="Proficiency" source="Realms of Indoril" id="ID_ROI_CLERIC_SACRED_CALLING_TEMPLE_GUARDIAN_PROFICIENCY_MARTIAL_WEAPONS">
+        <supports>ID_ROI_SACRED_CALLING_CLERIC_TEMPLE_GUARDIAN</supports>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_MELEE_WEAPONS" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_RANGED_WEAPONS" />
+        </rules>
+    </element>
+    <!-- 
+        BLESSED HEALER
+    -->
+    <element name="Blessed Healer" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_CLERIC_SACRED_CALLING_BLESSED_HEALER">
+        <supports>Sacred Calling</supports>
+        <requirements>!ID_INTERNAL_ROI_FEATURE_REPLACEMENT_CLERIC_SACRED_CALLING_BLESSED_HEALER</requirements>
+        <description>
+            <p>When you restore hit points to a creature using a cleric spell of 1st level or higher, that creature gains temporary hit points equal to your Wisdom modifier.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_CLERIC_SACRED_CALLING_BLESSED_HEALER_EFFECT" />
+        </rules>
+    </element>
+    <element name="Sacred Calling: Blessed Healer" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_CLERIC_SACRED_CALLING_BLESSED_HEALER_EFFECT">
+        <sheet>
+            <description>
+                <p>When you restore hit points to a creature using a cleric spell of 1st level or higher, that creature gains temporary hit points equal to your Wisdom modifier.</p>
+            </description>
+        </sheet>
+    </element>
+    <!--
+        DIVINE COMMUNION
+    -->
+    <element name="Divine Communion" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_CLERIC_DIVINE_COMMUNION">
+        <requirements>!ID_INTERNAL_ROI_FEATURE_REPLACEMENT_CLERIC_DIVINE_COMMUNION</requirements>
+        <description usage="1/2d4 Days">
+            <p>At 9th level, you can attempt to contact your deity directly. Once per day, you can make a DC 20 Intelligence (Religion) check.</p>
+            <p class="indent">On a success, you receive a brief sign, omen, phrase, vision, or answer from your deity, as determined by the DM.</p>
+        </description>
+        <sheet action="Action">
+            <description usage="1/2d4 Days">
+                <p>At 9th level, you can attempt to contact your deity directly. Once per day, you can make a DC 20 Intelligence (Religion) check.</p>
+                <p class="indent">On a success, you receive a brief sign, omen, phrase, vision, or answer from your deity, as determined by the DM.</p>
+            </description>
+        </sheet>
+    </element>
+    <!--
+        GREATER CHANNEL DIVINITY
+    -->
+    <element name="Greater Channel Divinity" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_CLERIC_GREATER_CHANNEL_DIVINITY">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_GREATER_CHANNEL_DIVINITY</requirements>
+        <description>
+            <p>At 11th level, you gain <strong>two additional</strong> uses of Bardic Inspiration.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <stat name="channel divinity:count" value="1" level="11" />
+        </rules>
+    </element>
+    <!--
+        SUPREME DIVINE INTERVENTION
+    -->
+    <element name="Supreme Divine Intervention" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_CLERIC_SUPREME_DIVINE_INTERVENTION">
+        <requirements>!ID_INTERNAL_ROI_FEATURE_REPLACEMENT_CLERIC_SUPREME_DIVINE_INTERVENTION</requirements>
+        <description>
+            <p>At 20th level, when you use <strong>Divine Intervention</strong>, you can have your deity duplicate the effects of the <strong>wish</strong> spell.</p>
+            <p>Once you use Divine Intervention in this way, you cannot use Divine Intervention again for <strong>2d4</strong> days.</p>
+        </description>
+        <sheet action="Action">
+            <description usage="1/2d4 Days">
+                <p>When you use <strong>Divine Intervention</strong>, you can have your deity duplicate the effects of the <strong>wish</strong> spell.</p>
+            </description>
+        </sheet>
+    </element>
+</elements>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <update version="0.0.2">
+            <file name="source.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/source.xml" />
+        </update>
+    </info>
+    <element name="Realms of Indoril" type="Source" source="Core" id="ID_LT_SOURCE_REALMS_OF_INDORIL">
+        <description>
+            <p>Explore the various realms originating from the planet Indoril, its moons, pasts, futures, and possibilities between.</p>
+        </description>
+        <setters>
+            <set name="abbreviation">ROI</set>
+            <set name="url">https://startplaying.games/gm/cm9hqzoml0064wu4zwkwu8eg3</set>
+            <set name="author" abbreviation="LT" url="https://startplaying.games/gm/cm9hqzoml0064wu4zwkwu8eg3">DM Erin</set>
+            <set name="image">https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/xanathars-guide-to-everything/XGTE.jpg</set>
+            <set name="third-party">true</set>
+            <set name="supplement">true</set>
+            <set name="release">20260616</set>
+        </setters>
+    </element>
+</elements>

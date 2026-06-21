@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Warlock</name>
+        <description>The Warlock additions to the Realms of Indoril game series.</description>
+        <update version="1.0.0">
+            <file name="append-warlock.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-warlock.xml" />
+        </update>
+    </info>
+    <!--
+        Allow selecting the Realms of Indoril
+        Homebrew Rules, which will activate all relevant features.
+    -->
+    <append name="Warlock" type="Class" source="Realms of Indoril" id="ID_WOTC_PHB_CLASS_WARLOCK">
+        <rules>
+
+            <select type="Feat" name="Realms of Indoril Rules" supports="ID_ROI_RULES_WARLOCK" optional="true" />
+        </rules>
+    </append>
+    <!--
+        Specific feat displaying the actual homebrew being added with Indoril
+        rules, including HTML for formatting.
+    -->
+    <element name="Realms of Indoril Rules (Warlock)" type="Feat" source="Realms of Indoril" id="ID_ROI_RULES_WARLOCK">
+        <supports>ID_ROI_RULES_WARLOCK</supports>
+        <requirements>!ID_ROI_RULES</requirements>
+        <description>
+            <p>Update your class to be compatible with the <strong>Realms of Indoril</strong> series of games. This will replace certain class features, add new ones, and augment existing ones.</p>
+            <div element="ID_ROI_CLASS_FEATURE_WARLOCK_SPELLCASTING" />
+            <div element="ID_ROI_CLASS_FEATURE_WARLOCK_PATRONS_GIFT" />
+            <div element="ID_ROI_CLASS_FEATURE_WARLOCK_EXPANDED_PACT_BOON" />
+            <div element="ID_ROI_CLASS_FEATURE_WARLOCK_GREATER_PACT_BOON" />
+            <div element="ID_ROI_CLASS_FEATURE_WARLOCK_PATRONS_AUDIENCE" />
+            <div element="ID_ROI_CLASS_FEATURE_WARLOCK_EXPANDED_PACT_MAGIC" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <!-- REPLACEMENTS -->
+            <!-- ADDITIONS -->
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_WARLOCK_SPELLCASTING" level="1" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_WARLOCK_PATRONS_GIFT" level="1" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_WARLOCK_EXPANDED_PACT_BOON" level="5" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_WARLOCK_GREATER_PACT_BOON" level="9" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_WARLOCK_PATRONS_AUDIENCE" level="9" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_WARLOCK_EXPANDED_PACT_MAGIC" level="13" />
+        </rules>
+    </element>
+    <element name="Spellcasting" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_WARLOCK_SPELLCASTING">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WARLOCK_SPELLCASTING</requirements>
+        <description>
+            <p>The number of spells you may learn increases by <strong>4</strong>
+            </p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <select type="Spell" name="Spellcasting (Warlock)" supports="$(spellcasting:list),$(spellcasting:slots)" level="1" number="4" spellcasting="Warlock"/>
+        </rules>
+    </element>
+    <!--
+        PATRON'S GIFT
+    -->
+    <element name="Patron's Gift" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_WARLOCK_PATRONS_GIFT">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WARLOCK_PATRONS_GIFT</requirements>
+        <description>
+            <p>At 1st level, You gain <strong>one additional Eldritch Invocation</strong> of your choice.</p>
+            <p>You must meet the invocation's prerequisites as normal.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <select type="Class Feature" name="Eldritch Invocation (Patron's Gift)" supports="Eldritch Invocation" level="1" number="1" />
+        </rules>
+    </element>
+    <!--
+        EXPANDED PACT BOON
+    -->
+    <element name="Expanded Pact Boon" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_WARLOCK_EXPANDED_PACT_BOON">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WARLOCK_EXPANDED_PACT_BOON</requirements>
+        <description>
+            <p>At 5th level, you gain one additional <strong>Pact Boon</strong> of your choice from the Warlock class.</p>
+            <p class="indent">This Pact Boon must be different from any Pact Boon you already have. It follows all normal rules for Pact Boons. If the Pack Boon grants an object, familiar, book, weapon, or other feature, you gain that benefit as normal.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <select type="Class Feature" name="Pact Boon" supports="Pact Boon" level="5"/>
+        </rules>
+    </element>
+    <!--
+        GREATER PACT BOON
+    -->
+    <element name="Greater Pact Boon" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_WARLOCK_GREATER_PACT_BOON">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WARLOCK_GREATER_PACT_BOON</requirements>
+        <description>
+            <p>At 9th level, you gain one additional <strong>Pact Boon</strong> of your choice from the Warlock class.</p>
+            <p class="indent">This Pact Boon must be different from any Pact Boon you already have. It follows all normal rules for Pact Boons. If the Pack Boon grants an object, familiar, book, weapon, or other feature, you gain that benefit as normal.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <select type="Class Feature" name="Pact Boon" supports="Pact Boon" level="9"/>
+        </rules>
+    </element>
+    <!--
+        PATRON'S AUDIENCE
+    -->
+    <element name="Patron's Audience" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_WARLOCK_PATRONS_AUDIENCE">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WARLOCK_PATRONS_AUDIENCE</requirements>
+        <description>
+            <p>At 9th level, you can attempt to contact your patron directly. Once per day, you can make a DC 20 <strong>Intelligence (Religion)</strong> check.</p>
+            <p>On a success, you receive a brief sign, omen, phrase, vision, or answer from your patron, as determined by the DM.</p>
+        </description>
+        <sheet>
+            <description>You may attempt to contact your patron directly.</description>
+        </sheet>
+    </element>
+    <!--
+        EXPANDED PACT MAGIC
+    -->
+    <element name="Expanded Pact Magic" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_WARLOCK_EXPANDED_PACT_MAGIC">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WARLOCK_EXPANDED_PACT_MAGIC</requirements>
+        <description>
+            <p>At 13th level, you gain <strong>one additional Warlock spell slot</strong>.
+            </p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <stat name="warlock:spellcasting:slots:count" value="1" level="13"/>
+        </rules>
+    </element>
+</elements>

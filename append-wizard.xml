@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Wizard</name>
+        <description>The Wizard additions to the Realms of Indoril game series.</description>
+        <update version="1.0.0">
+            <file name="append-wizard.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-wizard.xml" />
+        </update>
+    </info>
+    <!--
+        Allow selecting the Realms of Indoril
+        Homebrew Rules, which will activate all relevant features.
+    -->
+    <append name="Wizard" type="Class" source="Realms of Indoril" id="ID_WOTC_PHB_CLASS_WIZARD">
+        <rules>
+
+            <select type="Feat" name="Realms of Indoril Rules" supports="ID_ROI_RULES_WIZARD" optional="true" />
+        </rules>
+    </append>
+    <!--
+        Specific feat displaying the actual homebrew being added with Indoril
+        rules, including HTML for formatting.
+    -->
+    <element name="Realms of Indoril Rules (Wizard)" type="Feat" source="Realms of Indoril" id="ID_ROI_RULES_WIZARD">
+        <supports>ID_ROI_RULES_WIZARD</supports>
+        <requirements>!ID_ROI_RULES</requirements>
+        <description>
+            <p>Update your class to be compatible with the <strong>Realms of Indoril</strong> series of games. This will replace certain class features, add new ones, and augment existing ones.</p>
+            <div element="ID_ROI_CLASS_FEATURE_WIZARD_SPELLCASTING" />
+            <div element="ID_ROI_CLASS_FEATURE_WIZARD_EXPANDED_SPELLBOOK" />
+            <div element="ID_ROI_CLASS_FEATURE_WIZARD_SWIFT_ARCANE_RECOVERY" />
+            <div element="ID_ROI_CLASS_FEATURE_WIZARD_GREATER_ARCANE_RECOVERY" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <!-- REPLACEMENTS -->
+            <grant type="Class Feature" id="ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_ARCANE_RECOVERY" />
+            <!-- ADDITIONS -->
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_WIZARD_SPELLCASTING" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_WIZARD_EXPANDED_SPELLBOOK" level="3" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_WIZARD_ARCANE_RECOVERY" level="3" />
+        </rules>
+    </element>
+
+    <element name="Spellcasting" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_WIZARD_SPELLCASTING">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_SPELLCASTING</requirements>
+        <description>
+            <p>The number of spells you may prepare increases by <strong>4</strong>
+            </p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <stat name="wizard:spellcasting:prepare" value="4" level="1" />
+        </rules>
+    </element>
+    <!--
+        EXPANDED SPELLBOOK
+    -->
+    <element name="Expanded Spellbook" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_WIZARD_EXPANDED_SPELLBOOK">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_EXPANDED_SPELLBOOK</requirements>
+        <description>
+            <p>
+                Each time you gain a Wizard level, you can add three wizard spells of your choice to your spellbook for free, instead of two.
+            </p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="3" number="1" spellcasting="Wizard" />
+            <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="4" number="1" spellcasting="Wizard" />
+            <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="5" number="1" spellcasting="Wizard" />
+            <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="6" number="1" spellcasting="Wizard" />
+            <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="7" number="1" spellcasting="Wizard" />
+            <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="8" number="1" spellcasting="Wizard" />
+            <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="9" number="1" spellcasting="Wizard" />
+            <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="10" number="1" spellcasting="Wizard" />
+            <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="11" number="1" spellcasting="Wizard" />
+            <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="12" number="1" spellcasting="Wizard" />
+            <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="13" number="1" spellcasting="Wizard" />
+            <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="14" number="1" spellcasting="Wizard" />
+            <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="15" number="1" spellcasting="Wizard" />
+            <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="16" number="1" spellcasting="Wizard" />
+            <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="17" number="1" spellcasting="Wizard" />
+            <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="18" number="1" spellcasting="Wizard" />
+            <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="19" number="1" spellcasting="Wizard" />
+            <select type="Spell" name="Spellbook (Wizard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="20" number="1" spellcasting="Wizard" />
+        </rules>
+    </element>
+    <!--
+        SWIFT ARCANE RECOVERY
+    -->
+    <element name="Swift Arcane Recovery" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_WIZARD_SWIFT_ARCANE_RECOVERY">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_SWIFT_ARCANE_RECOVERY</requirements>
+        <description>
+            <p>Starting at 3rd level, you can use <strong>Arcane Recovery</strong> as a bonus action, rather than during a short rest.</p>
+        </description>
+        <sheet display="false" />
+    </element>
+    <!--
+        GREATER ARCANE RECOVERY
+    -->
+    <element name="Greater Arcane Recovery" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_WIZARD_GREATER_ARCANE_RECOVERY">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_GREATER_ARCANE_RECOVERY</requirements>
+        <description>
+            <p>Starting at 11th level, you gain <strong>one additional use</strong> of Arcane Recovery.</p>
+        </description>
+        <sheet display="false" />
+    </element>
+    <!--
+        ARCANE RECOVERY
+    -->
+
+    <element name="Arcane Recovery" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_WIZARD_ARCANE_RECOVERY">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_IMPROVED_ARCANE_RECOVERY</requirements>
+        <description>
+            <p>You have learned to regain some of your magical energy by studying your spellbook. Once per day, you can choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your wizard level (rounded up), and none of the slots can be 8th level or higher.</p>
+            <p class="indent">For example, if you’re a 4th-level wizard, you can recover up to two levels worth of spell slots. You can recover either a 2nd-level spell slot or two 1st-level spell slots.</p>
+        </description>
+        <sheet>
+            <description usage="{{arcane recovery:count}}/Bonus Action">Once per day, you can choose expended spell slots up to 7th level to recover. The spell slots can have a combined level that is equal to or less than {{level:wizard:half:up}}.</description>
+        </sheet>
+        <rules>
+            <stat name="arcane recovery:count" value="1" level="1" bonus="arcane recovery" />
+            <stat name="arcane recovery:count" value="2" level="11" bonus="arcane recovery" />
+        </rules>
+    </element>
+
+</elements>

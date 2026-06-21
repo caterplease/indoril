@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Monk</name>
+        <description>The Monk additions to the Realms of Indoril game series.</description>
+        <update version="1.0.0">
+            <file name="append-monk.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-monk.xml" />
+        </update>
+    </info>
+    <!--
+        Allow selecting the Realms of Indoril
+        Homebrew Rules, which will activate all relevant features.
+    -->
+    <append name="Monk" type="Class" source="Realms of Indoril" id="ID_WOTC_PHB_CLASS_MONK">
+        <rules>
+
+            <select type="Feat" name="Realms of Indoril Rules" supports="ID_ROI_RULES_MONK" optional="true" />
+        </rules>
+    </append>
+    <!--
+        Specific feat displaying the actual homebrew being added with Indoril
+        rules, including HTML for formatting.
+    -->
+    <element name="Realms of Indoril Rules (Monk)" type="Feat" source="Realms of Indoril" id="ID_ROI_RULES_MONK">
+        <supports>ID_ROI_RULES_MONK</supports>
+        <requirements>!ID_ROI_RULES</requirements>
+        <description>
+            <p>Update your class to be compatible with the <strong>Realms of Indoril</strong> series of games. This will replace certain class features, add new ones, and augment existing ones.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+        </rules>
+    </element>
+</elements>

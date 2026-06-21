@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Bard</name>
+        <description>The Bard additions to the Realms of Indoril game series.</description>
+        <update version="1.0.0">
+            <file name="append-bard.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-bard.xml" />
+        </update>
+    </info>
+    <!--
+        Allow selecting the Realms of Indoril
+        Homebrew Rules, which will activate all relevant features.
+    -->
+    <append name="Bard" type="Class" source="Realms of Indoril" id="ID_WOTC_PHB_CLASS_BARD">
+        <rules>
+            <select type="Feat" name="Realms of Indoril Rules" supports="ID_ROI_RULES_BARD" optional="true" />
+        </rules>
+    </append>
+    <!--
+        Specific feat displaying the actual homebrew being added with Indoril
+        rules, including HTML for formatting.
+    -->
+    <element name="Realms of Indoril Rules (Bard)" type="Feat" source="Realms of Indoril" id="ID_ROI_RULES_BARD">
+        <supports>ID_ROI_RULES_BARD</supports>
+        <requirements>!ID_ROI_RULES</requirements>
+        <description>
+            <p>Update your class to be compatible with the <strong>Realms of Indoril</strong> series of games. This will replace certain class features, add new ones, and augment existing ones.</p>
+            <div element="ID_ROI_CLASS_FEATURE_BARD_SPELLCASTING" />
+            <div element="ID_ROI_CLASS_FEATURE_BARD_ENDURING_INSPIRATION" />
+            <div element="ID_ROICLASS_FEATURE_BARD_QUICK_INSPIRATION" />
+            <div element="ID_ROI_CLASS_FEATURE_BARD_TALES_OF_INSPIRATION" />
+            <div element="ID_ROI_CLASS_FEATURE_BARD_ENHANCED_MAGICAL_SECRETS" />
+            <div element="ID_ROI_CLASS_FEATURE_BARD_GREATER_INSPIRATION" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <!-- REPLACEMENTS -->
+            <!-- ADDITIONS -->
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_BARD_SPELLCASTING" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_BARD_QUICK_INSPIRATION" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_BARD_TALES_OF_INSPIRATION" level="6" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_BARD_ENHANCED_MAGICAL_SECRETS" level="10" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_BARD_GREATER_INSPIRATION" level="11" />
+        </rules>
+    </element>
+
+    <element name="Spellcasting" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_BARD_SPELLCASTING">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_BARD_SPELLCASTING</requirements>
+        <description>
+            <p>The number of spells you may prepare increases by <strong>4</strong>
+            </p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <select type="Spell" name="Spellcasting (Bard)" supports="$(spellcasting:list), $(spellcasting:slots)" level="1" number="4" spellcasting="Bard" />
+        </rules>
+    </element>
+
+    <element name="Enduring Inspiration" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_BARD_ENDURING_INSPIRATION">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_BARD_ENDURING_INSPIRATION</requirements>
+        <description>
+            <p>When you give a creature a <strong>Bardic Inspiration</strong> die, that die lasts until the creature finishes a long rest.</p>
+        </description>
+        <sheet display="false" />
+    </element>
+    <element name="Quick Inspiration" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_BARD_QUICK_INSPIRATION">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_BARD_QUICK_INSPIRATION</requirements>
+        <description>
+            <p>You can use <strong>Bardic Inspiration</strong> as a reaction.</p>
+        </description>
+        <sheet>
+            <description>
+                <p>You may use <strong>Bardic Inspiration</strong> as a reaction.</p>
+            </description>
+        </sheet>
+    </element>
+    <element name="Tales of Inspiration" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_BARD_TALES_OF_INSPIRATION">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_BARD_TALES_OF_INSPIRATION</requirements>
+        <description>
+            <p>When you finish a long rest, roll 1d6 on the <strong>Tales of Inspiration</strong> list below. Your Bardic Inspiration gains the feature of the tale you roll until you finish your next long rest.</p>
+            <p class="indent">Once you roll a tale, that tale cannot be rolled again until you have rolled every other tale on the list. If you roll a tale that has already been used in the current cycle, reroll until you get an unused tale. Once all tales have been used, the cycle resets.</p>
+            <p class="indent">The chosen tale applies to any Bardic Inspiration you give while the tale is active</p>
+            <h3 class="caption">Table of Tales</h3>
+            <table class="class-features">
+                <thead>
+                    <tr>
+                        <td class="col-5">Roll</td>
+                        <td>Name</td>
+                        <td class="left">Effect</td>
+                    </tr>
+                </thead>
+                <tr>
+                    <td> 1</td>
+                    <td>Hearty Tales</td>
+                    <td class="left">When a creature receives your Bardic Inspiration, it gains temporary hit points equal to your <strong>Charisma</strong> modifier plus your proficiency bonus.</td>
+                </tr>
+                <tr>
+                    <td> 2</td>
+                    <td>Heroic Tales</td>
+                    <td class="left">While a creature has your Bardic Inspiration, a roll of 1 on the d20 is not treated as an automatic failure for that creature.</td>
+                </tr>
+                <tr>
+                    <td> 3</td>
+                    <td>War Tales</td>
+                    <td class="left">When a creature with your Bardic Inspiration makes an attack roll, it can expend the Bardic Inspiration die to automatically hit with that attack.</td>
+                </tr>
+                <tr>
+                    <td> 4</td>
+                    <td>Inspiration Tales</td>
+                    <td class="left">
+                        <p>When a creature with your Bardic Inspiration makes an attack roll, ability check, or saving throw, it can expend the Bardic Inspiration die to make the roll with advantage.</p>
+                        <p>If the creature already has advantage on the roll, it rolls three d20s instead of two and uses the highest result.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 5</td>
+                    <td>Warding Tales</td>
+                    <td class="left">
+                        <p>While a creature has your Bardic Inspiration, it has advantage on saving throws against being charmed, frightened, stunned, or paralyzed.</p>
+                        <p>If the creature fails a saving throw against one of these effects, it can expend your Bardic Inspiration die to reroll the saving throw. The creature must use the new roll.
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 6</td>
+                    <td>Mischevious Tales</td>
+                    <td class="left">
+                        <p>While Mischievous Tales is active, you can use your Bardic Inspiration against enemies instead of allies.</p>
+                        <p>When a creature you can see within range makes an attack roll, ability check, or saving throw, you can use your reaction to expend one use of Bardic Inspiration. Roll your Bardic Inspiration die and subtract the number rolled from the creature’s roll.</p>
+                    </td>
+                </tr>
+            </table>
+        </description>
+        <sheet>
+            <description>You apply your daily rolled Tale of Inspiration to Bardic Inspirations</description>
+        </sheet>
+    </element>
+    <element name="Enhanced Magical Secrets" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_BARD_ENHANCED_MAGICAL_SECRETS">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_BARD_ENHANCED_MAGICAL_SECRETS</requirements>
+        <description>
+            <p>At 10th level, you learn <strong>four</strong> magical secrets, instead of two.</p>
+        </description>
+        <sheet>
+            <description>
+                <p>You may use <strong>Bardic Inspiration</strong> as a reaction.</p>
+            </description>
+        </sheet>
+        <rules>
+            <select type="Spell" name="Magical Secrets" supports="(0)||($(spellcasting:slots))" number="2" level="10" spellcasting="Bard"/>
+        </rules>
+    </element>
+    <element name="Greater Inspiration" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_BARD_GREATER_INSPIRATION">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_BARD_GREATER_INSPIRATION</requirements>
+        <description>
+            <p>At 11th level, you gain <strong>two additional</strong> uses of Bardic Inspiration.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <stat name="bardic-inspiration:count" value="2" level="11" />
+        </rules>
+    </element>
+
+</elements>
