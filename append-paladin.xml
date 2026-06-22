@@ -26,9 +26,97 @@
         <requirements>!ID_ROI_RULES</requirements>
         <description>
             <p>Update your class to be compatible with the <strong>Realms of Indoril</strong> series of games. This will replace certain class features, add new ones, and augment existing ones.</p>
+            <div element="ID_ROI_CLASS_FEATURE_PALADIN_SPELLCASTING" />
+            <div element="ID_ROI_CLASS_FEATURE_PALADIN_SWIFT_LAY_ON_HANDS" />
+            <div element="ID_ROI_CLASS_FEATURE_PALADIN_PATIENT_SMITE" />
+            <div element="ID_ROI_CLASS_FEATURE_PALADIN_IMPROVED_EXTRA_ATTACK" />
+            <div element="ID_ROI_CLASS_FEATURE_PALADIN_GREATER_CHANNEL_DIVINITY" />
         </description>
         <sheet display="false" />
         <rules>
+            <!-- REPLACEMENTS -->
+            <grant type="Class Feature" id="ID_INTERNAL_FEATURE_REPLACEMENT_PALADIN_EXTRA_ATTACK" />
+            <!-- ADDITIONS -->
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_PALADIN_SPELLCASTING" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_PALADIN_SWIFT_LAY_ON_HANDS" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_PALADIN_PATIENT_SMITE" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_PALADIN_IMPROVED_EXTRA_ATTACK" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_PALADIN_GREATER_CHANNEL_DIVINITY" level="11" />
+        </rules>
+    </element>
+    <!--
+        SPELLCASTING
+    -->
+    <element name="Spellcasting" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_PALADIN_SPELLCASTING">
+        <requirements>ID_INTERNAL_GRANTS_SPELLCASTING_FEATURE</requirements>
+        <description>
+            <p>The number of spells you may prepare increases by <strong>2</strong>
+            </p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <stat name="paladin:spellcasting:prepare" value="2" />
+        </rules>
+    </element>
+    <!--
+        SWIFT LAY ON HANDS
+    -->
+    <element name="Swift Lay on Hands" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_PALADIN_SWIFT_LAY_ON_HANDS">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_PALADIN_SWIFT_LAY_ON_HANDS</requirements>
+        <description>
+            <p>You can use <strong>Lay on Hands</strong> as a bonus action.
+            </p>
+        </description>
+        <sheet>
+            <description>
+                <p>You may use <strong>Lay on Hands</strong> as a bonus action.</p>
+            </description>
+        </sheet>
+        <rules>
+            <stat name="paladin:spellcasting:prepare" value="2" />
+        </rules>
+    </element>
+    <!--
+        PATIENT SMITE
+    -->
+    <element name="Patient Smite" type="Class Feature" source="Indoril" id="ID_ROI_CLASS_FEATURE_PALADIN_PATIENT_SMITE">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_PALADIN_PATIENT_SMITE</requirements>
+        <description>
+            <p>Starting at 1st level, when you cast a smite spell that requires concentration, the spell is not expended until you successfully hit a creature with a weapon attack.</p>
+        </description>
+        <sheet>
+            <description>Starting at 1st level, when you cast a smite spell that requires concentration, the spell is not expended until you successfully hit a creature with a weapon attack.</description>
+        </sheet>
+    </element>
+    <!--
+        IMPROVED EXTRA ATTACK
+    -->
+    <element name="Extra Attack" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_PALADIN_IMPROVED_EXTRA_ATTACK">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_PALADIN_IMPROVED_EXTRA_ATTACK</requirements>
+        <description>
+            <p>Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.</p>
+            <p>This increases to three times at 11th level</p>
+        </description>
+        <sheet>
+            <description level="5">Test You can attack twice, instead of once, whenever you take the Attack action on your turn.</description>
+            <description level="11">You can attack three times, instead of once, whenever you take the Attack action on your turn.</description>
+        </sheet>
+        <rules>
+            <stat name="extra attack:count" value="2" level="5" bonus="extra attack" />
+            <stat name="extra attack:count" value="3" level="11" bonus="extra attack" />
+        </rules>
+    </element>
+    <!--
+        GREATER CHANNEL DIVINITY
+    -->
+    <element name="Greater Channel Divinity" type="Class Feature" source="Indoril" id="ID_ROI_CLASS_FEATURE_PALADIN_GREATER_CHANNEL_DIVINITY">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_PALADIN_GREATER_CHANNEL_DIVINITY</requirements>
+        <description>
+            <p>Starting at 11th level, you gain <strong>one extra use</strong> of Channel Divinity.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <stat name="channel divinity:count" value="2" level="11" bonus="base" />
         </rules>
     </element>
 </elements>
