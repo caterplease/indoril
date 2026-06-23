@@ -4,7 +4,7 @@
         <name>Sorcerer</name>
         <description>The Sorcerer additions to the Realms of Indoril game series.</description>
         <update version="1.0.0">
-            <file name="append-sorcerer.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-sorcerer.xml" />
+            <file name="append-sorcerer.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/append-sorcerer.xml" />
         </update>
     </info>
     <!--

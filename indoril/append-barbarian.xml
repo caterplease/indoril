@@ -4,7 +4,7 @@
         <name>Barbarian</name>
         <description>The Barbarian additions to the Realms of Indoril game series.</description>
         <update version="1.0.0">
-            <file name="append-barbarian.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-barbarian.xml" />
+            <file name="append-barbarian.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/append-barbarian.xml" />
         </update>
     </info>
     <!--

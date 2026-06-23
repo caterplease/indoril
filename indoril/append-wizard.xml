@@ -4,7 +4,7 @@
         <name>Wizard</name>
         <description>The Wizard additions to the Realms of Indoril game series.</description>
         <update version="1.0.0">
-            <file name="append-wizard.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-wizard.xml" />
+            <file name="append-wizard.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/append-wizard.xml" />
         </update>
     </info>
     <!--

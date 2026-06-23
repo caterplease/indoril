@@ -4,7 +4,7 @@
         <name>Cleric</name>
         <description>The Cleric additions to the Realms of Indoril game series.</description>
         <update version="1.0.0">
-            <file name="append-cleric.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-cleric.xml" />
+            <file name="append-cleric.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/append-cleric.xml" />
         </update>
     </info>
     <!--

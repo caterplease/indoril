@@ -2,7 +2,7 @@
 <elements>
     <info>
         <update version="0.0.2">
-            <file name="source.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/source.xml" />
+            <file name="source.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/source.xml" />
         </update>
     </info>
     <element name="Realms of Indoril" type="Source" source="Core" id="ID_LT_SOURCE_REALMS_OF_INDORIL">

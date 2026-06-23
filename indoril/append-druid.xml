@@ -4,7 +4,7 @@
         <name>Druid</name>
         <description>The Druid additions to the Realms of Indoril game series.</description>
         <update version="1.0.0">
-            <file name="append-druid.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-druid.xml" />
+            <file name="append-druid.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/append-druid.xml" />
         </update>
     </info>
     <!--

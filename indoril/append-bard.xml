@@ -4,7 +4,7 @@
         <name>Bard</name>
         <description>The Bard additions to the Realms of Indoril game series.</description>
         <update version="1.0.0">
-            <file name="append-bard.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-bard.xml" />
+            <file name="append-bard.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/append-bard.xml" />
         </update>
     </info>
     <!--

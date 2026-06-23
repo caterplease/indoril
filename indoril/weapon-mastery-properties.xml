@@ -4,7 +4,7 @@
         <name>Mastery Properties</name>
         <description>The Mastery Properties for Martial from the new Player’s Handbook.</description>
         <update version="0.0.1">
-            <file name="weapon-mastery-properties.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/weapon-mastery-properties.xml" />
+            <file name="weapon-mastery-properties.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/weapon-mastery-properties.xml" />
         </update>
     </info>
 

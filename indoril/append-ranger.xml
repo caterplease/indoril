@@ -4,7 +4,7 @@
         <name>Ranger</name>
         <description>The Ranger additions to the Realms of Indoril game series.</description>
         <update version="1.0.0">
-            <file name="append-ranger.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-ranger.xml" />
+            <file name="append-ranger.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/append-ranger.xml" />
         </update>
     </info>
     <!--

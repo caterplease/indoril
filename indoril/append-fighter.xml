@@ -4,7 +4,7 @@
         <name>Fighter</name>
         <description>The Fighter additions to the Realms of Indoril game series.</description>
         <update version="1.0.0">
-            <file name="append-fighter.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-fighter.xml" />
+            <file name="append-fighter.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/append-fighter.xml" />
         </update>
     </info>
     <!--

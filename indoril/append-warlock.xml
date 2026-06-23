@@ -4,7 +4,7 @@
         <name>Warlock</name>
         <description>The Warlock additions to the Realms of Indoril game series.</description>
         <update version="1.0.0">
-            <file name="append-warlock.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-warlock.xml" />
+            <file name="append-warlock.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/append-warlock.xml" />
         </update>
     </info>
     <!--

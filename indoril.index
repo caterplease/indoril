@@ -1,27 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <index>
     <info>
         <name>Realms of Indoril</name>
-        <description>Realms of Indoril series of games homebrew rules for Dungeons and Dragons 5th Edition.</description>
-        <author>DM Erin</author>
-        <update version="1.0">
-            <file name="indoril.index" url="https://raw.githubusercontent.com/caterplease/indoril/main/indoril.index" />
+        <update version="1.0.0">
+            <file name="user-yourname.index" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril.index" />
         </update>
     </info>
     <files>
-        <file name="source.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/source.xml" />
-        <file name="append-barbarian.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-barbarian.xml" />
-        <file name="append-bard.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-bard.xml" />
-        <file name="append-cleric.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-cleric.xml" />
-        <file name="append-druid.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-druid.xml" />
-        <file name="append-fighter.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-fighter.xml" />
-        <file name="append-monk.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-monk.xml" />
-        <file name="append-paladin.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-paladin.xml" />
-        <file name="append-ranger.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-ranger.xml" />
-        <file name="append-rogue.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-rogue.xml" />
-        <file name="append-sorcerer.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-sorcerer.xml" />
-        <file name="append-warlock.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-warlock.xml" />
-        <file name="append-wizard.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/append-wizard.xml" />
-        <file name="weapon-mastery-properties.xml" url="https://raw.githubusercontent.com/caterplease/indoril/main/weapon-mastery-properties.xml" />
+        <file name="file1.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/source.xml" />
+        <file name="append-barbarian.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/append-barbarian.xml" />
+        <file name="append-bard.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/append-bard.xml" />
+        <file name="append-cleric.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/append-cleric.xml" />
+        <file name="append-druid.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/append-druid.xml" />
+        <file name="append-fighter.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/append-fighter.xml" />
+        <file name="append-monk.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/append-monk.xml" />
+        <file name="append-paladin.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/append-paladin.xml" />
+        <file name="append-ranger.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/append-ranger.xml" />
+        <file name="append-rogue.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/append-rogue.xml" />
+        <file name="append-sorcerer.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/append-sorcerer.xml" />
+        <file name="append-warlock.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/append-warlock.xml" />
+        <file name="append-wizard.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/append-wizard.xml" />
+        <file name="weapon-mastery-properties.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/weapon-mastery-properties.xml" />
     </files>
 </index>
