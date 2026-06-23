@@ -7,7 +7,7 @@
         </update>
     </info>
     <files>
-        <file name="file1.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/source.xml" />
+        <file name="source.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/source.xml" />
         <file name="append-barbarian.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/append-barbarian.xml" />
         <file name="append-bard.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/append-bard.xml" />
         <file name="append-cleric.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/append-cleric.xml" />
