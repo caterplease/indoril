@@ -3,7 +3,7 @@
     <info>
         <name>Realms of Indoril</name>
         <update version="1.0.0">
-            <file name="user-yourname.index" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril.index" />
+            <file name="indoril.index" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril.index" />
         </update>
     </info>
     <files>
