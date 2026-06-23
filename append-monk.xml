@@ -26,9 +26,152 @@
         <requirements>!ID_ROI_RULES</requirements>
         <description>
             <p>Update your class to be compatible with the <strong>Realms of Indoril</strong> series of games. This will replace certain class features, add new ones, and augment existing ones.</p>
+            <div element="ID_ROI_CLASS_FEATURE_MONK_EXPANDED_MONK_WEAPONS" />
+            <div element="ID_ROI_CLASS_FEATURE_MONK_IMPROVED_MARTIAL_ARTS" />
+            <div element="ID_ROI_CLASS_FEATURE_MONK_EXPANDED_KI" />
+            <div element="ID_ROI_CLASS_FEATURE_MONK_KI_IMPROVED_PATIENT_DEFENSE" />
+            <div element="ID_ROI_CLASS_FEATURE_MONK_KI_IMPROVED_STEP_OF_THE_WIND" />
+            <div element="ID_ROI_CLASS_FEATURE_MONK_DEFLECT_STRIKES" />
+            <div element="ID_ROI_CLASS_FEATURE_MONK_IMPROVED_EXTRA_ATTACK" />
+            <div element="ID_ROI_CLASS_FEATURE_MONK_STUNNING_STRIKES" />
         </description>
         <sheet display="false" />
         <rules>
+            <!-- REPLACEMENTS -->
+            <grant type="Class Feature" id="ID_INTERNAL_FEATURE_REPLACEMENT_MONK_KI_PATIENT_DEFENSE" level="3" />
+            <grant type="Class Feature" id="ID_INTERNAL_FEATURE_REPLACEMENT_MONK_KI_STEP_OF_THE_WIND" level="3" />
+            <grant type="Class Feature" id="ID_INTERNAL_FEATURE_REPLACEMENT_MONK_EXTRA_ATTACK" level="5" />
+            <grant type="Class Feature" id="ID_INTERNAL_FEATURE_REPLACEMENT_MONK_STUNNING_STRIKE" level="5" />
+            <!-- ADDITIONS -->
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_MONK_EXPANDED_MONK_WEAPONS" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_MONK_IMPROVED_MARTIAL_ARTS" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_MONK_EXPANDED_KI" level="3" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_MONK_KI_IMPROVED_PATIENT_DEFENSE" level="3" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_MONK_KI_IMPROVED_STEP_OF_THE_WIND" level="3" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_MONK_DEFLECT_STRIKES" level="6" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_MONK_IMPROVED_EXTRA_ATTACK" level="5" />
+            <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_MONK_STUNNING_STRIKES" level="5" />
+        </rules>
+    </element>
+    <!--
+        STUNNING STRIKE
+    -->
+    <element name="Stunning Strike" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_MONK_STUNNING_STRIKES">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_MONK_STUNNING_STRIKES</requirements>
+        <description>
+            <p>Starting at 5th level, you can interfere with the flow of ki in an opponent’s body. Once per turn, When you hit another creature with a melee weapon attack, you can spend 1 ki point to attempt a stunning strike. The target must succeed on a Constitution saving throw or be stunned until the end of your next turn.</p>
+        </description>
+        <sheet usage="Ki">
+            <description usage="1/Turn">When you hit another creature with a melee weapon attack, you can spend 1 ki point to attempt a stunning strike. The target must succeed on a Constitution saving throw or be stunned until the end of your next turn.</description>
+        </sheet>
+    </element>
+    <element name="Expanded Monk Weapons" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_MONK_EXPANDED_MONK_WEAPONS">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_MONK_EXPANDED_MONK_WEAPONS</requirements>
+        <description>
+            <p>You can treat any <strong>simple weapon</strong> or <strong>light weapon</strong> as a Monk weapon, provided you are proficient with it.</p>
+        </description>
+        <sheet display="false" />
+    </element>
+    <!--
+        EXPANDED MONK WEAPONS
+    -->
+    <element name="Expanded Monk Weapons" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_MONK_EXPANDED_MONK_WEAPONS">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_MONK_EXPANDED_MONK_WEAPONS</requirements>
+        <description>
+            <p>You can treat any <strong>simple weapon</strong> or <strong>light weapon</strong> as a Monk weapon, provided you are proficient with it.</p>
+        </description>
+        <sheet display="false" />
+    </element>
+    <!--
+        IMPROVED MARTIAL ARTS
+    -->
+    <element name="Improved Martial Arts" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_MONK_IMPROVED_MARTIAL_ARTS">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_MONK_IMPROVED_MARTIAL_ARTS</requirements>
+        <description>
+            <p>Your Martial Arts die starts as a <strong>d6</strong> and improves up to a <strong>d12</strong>, gaining a tier at 5th, 11th, and 17th levels.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <stat name="martial arts:dice" value="6" bonus="martial arts" />
+            <stat name="martial arts:dice" value="8" bonus="martial arts" level="5" />
+            <stat name="martial arts:dice" value="10" bonus="martial arts" level="11" />
+            <stat name="martial arts:dice" value="12" bonus="martial arts" level="17" />
+        </rules>
+    </element>
+    <!--
+        EXPANDED KI
+    -->
+    <element name="Expanded Ki" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_MONK_EXPANDED_KI">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_MONK_EXPANDED_KI</requirements>
+        <description>
+            <p>Starting at 3rd level, your maximum number of Ki points increases by an amount equal to your Wisdom modifier, to a minimum of 1 additional Ki point.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <stat name="ki:points" value="wisdom:modifier" />
+        </rules>
+    </element>
+    <!--
+        IMPROVED PATIENT DEFENSE
+    -->
+    <element name="Improved Patient Defense" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_MONK_KI_IMPROVED_PATIENT_DEFENSE">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_MONK_KI_IMPROVED_PATIENT_DEFENSE</requirements>
+        <description>
+            <p>You can spend 1 ki point to take the Dodge action as a bonus action on your turn.</p>
+        </description>
+        <sheet alt="Patient Defense" action="Bonus Action" usage="Ki">
+            <description>You can spend 1 ki point to take the Dodge action on your turn and gain temporary hit points equal to your martial arts dice ({{martial arts:dice}}) plus your wisdom modifier ({{wisdom:modifier}}).
+                <p>These temporary hit points last until the start of your next turn</p>
+            </description>
+        </sheet>
+    </element>
+    <!--
+        IMPROVED STEP OF THE WIND
+    -->
+    <element name="Improved Step of the Wind" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_MONK_KI_IMPROVED_STEP_OF_THE_WIND">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_MONK_KI_IMPROVED_STEP_OF_THE_WIND</requirements>
+        <description>
+            <p>You can spend 1 ki point to take both the Disengage or Dash action as a bonus action on your turn.</p>
+        </description>
+        <sheet alt="Step of the Wind" action="Bonus Action" usage="Ki">
+            <description>You can spend 1 ki point to take both the Disengage or Dash action on your turn.</description>
+        </sheet>
+    </element>
+    <!--
+        DEFLECT STRIKES
+    -->
+    <element name="Deflect Strikes" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_MONK_DEFLECT_STRIKES">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_MONK_DEFLECT_STRIKES</requirements>
+        <description>
+            <p>Starting at 6th level, you can use your reaction to deflect or catch a melee attack that deals bludgeoning, piercing, or slashing damage.</p>
+            <p class="indent">When you do so, the damage you take from the attack is reduced by 1d10 + your Dexterity modifier + your monk level.</p>
+        </description>
+        <sheet action="Reaction">
+            <description>Reduce the damage of a melee attack that deals bludgeoning, piercing, or slashing damage by 1d10+{{monk:deflect strikes bonus}}.
+                <p>If you reduce the damage to 0, you can spend 1 ki point to make one unarmed strike against the attacker as part of the same reaction, provided the attacker is within your reach.</p>
+            </description>
+        </sheet>
+        <rules>
+            <stat name="monk:deflect strikes bonus" value="dexterity:modifier" />
+            <stat name="monk:deflect strikes bonus" value="level:monk" />
+        </rules>
+    </element>
+    <!--
+        IMPROVED EXTRA ATTACK
+    -->
+    <element name="Extra Attack" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_MONK_IMPROVED_EXTRA_ATTACK">
+        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_BARBARIAN_IMPROVED_EXTRA_ATTACK</requirements>
+        <description>
+            <p>Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.</p>
+            <p>This increases to three times at 11th level</p>
+        </description>
+        <sheet>
+            <description level="5">Test You can attack twice, instead of once, whenever you take the Attack action on your turn.</description>
+            <description level="11">You can attack three times, instead of once, whenever you take the Attack action on your turn.</description>
+        </sheet>
+        <rules>
+            <stat name="extra attack:count" value="2" level="5" bonus="extra attack" />
+            <stat name="extra attack:count" value="3" level="11" bonus="extra attack" />
         </rules>
     </element>
 </elements>
