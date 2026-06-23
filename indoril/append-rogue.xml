@@ -43,6 +43,8 @@
             <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_ROGUE_QUICK_HANDS" level="3" />
             <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_ROGUE_EXTRA_ATTACK" level="11" />
             <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_ROGUE_DEADLY_OPPORTUNIST" level="13" />
+            <!-- FEAT -->
+            <select type="Feat" name="Feat (Indoril)" optional="true" />
         </rules>
     </element>
 

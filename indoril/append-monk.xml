@@ -51,6 +51,8 @@
             <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_MONK_DEFLECT_STRIKES" level="6" />
             <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_MONK_IMPROVED_EXTRA_ATTACK" level="5" />
             <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_MONK_STUNNING_STRIKES" level="5" />
+            <!-- FEAT -->
+            <select type="Feat" name="Feat (Indoril)" optional="true" />
         </rules>
     </element>
     <!--

@@ -39,6 +39,8 @@
             <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_SORCERER_EXPANDED_SPELLCASTING" level="3" />
             <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_SORCERER_INNATE_METAMAGIC" level="3" />
             <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_SORCERER_RECKLESS_SORCERY" level="3" />
+            <!-- FEAT -->
+            <select type="Feat" name="Feat (Indoril)" optional="true" />
         </rules>
     </element>
     <!--

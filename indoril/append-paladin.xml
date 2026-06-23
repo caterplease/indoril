@@ -42,6 +42,8 @@
             <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_PALADIN_PATIENT_SMITE" />
             <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_PALADIN_IMPROVED_EXTRA_ATTACK" />
             <grant type="Class Feature" id="ID_ROI_CLASS_FEATURE_PALADIN_GREATER_CHANNEL_DIVINITY" level="11" />
+            <!-- FEAT -->
+            <select type="Feat" name="Feat (Indoril)" optional="true" />
         </rules>
     </element>
     <!--
