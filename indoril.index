@@ -21,5 +21,6 @@
         <file name="append-warlock.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/append-warlock.xml" />
         <file name="append-wizard.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/append-wizard.xml" />
         <file name="weapon-mastery-properties.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/weapon-mastery-properties.xml" />
+        <file name="languages.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/languages.xml" />
     </files>
 </index>

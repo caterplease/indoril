@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Languages</name>
+        <update version="0.0.2">
+            <file name="languages.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/languages.xml" />
+        </update>
+    </info>
+
+    <!-- most languages were moved to Core's ALE.xml -->
+    <element name="Zaharan" type="Language" source="Realms of Indoril" id="ID_ROI_LANGUAGE_ZAHARAN">
+        <requirements>!ID_ROI_LANGUAGE_ZAHARAN</requirements>
+        <supports>ID_ROI_OPTION_LANGUAGES</supports>
+        <description>
+            <p>Typically spoken by the people of Zahara.</p>
+        </description>
+    </element>
+
+</elements>
