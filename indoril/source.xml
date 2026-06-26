@@ -33,10 +33,10 @@
     </element>
     <!--
         Allows support for Realms of Indoril languages
-    -->
     <element name="Indoril Languages" type="Option" source="Realms of Indoril" id="ID_ROI_OPTION_LANGUAGES">
         <description>
             <p>Enable <strong>Realms of Indoril</strong> characters to select diagetic languages native to their campaign.</p>
         </description>
     </element>
+    -->
 </elements>
