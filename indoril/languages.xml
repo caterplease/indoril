@@ -9,12 +9,14 @@
 
     <!-- most languages were moved to Core's ALE.xml -->
     <element name="Zaharan" type="Language" source="Realms of Indoril" id="ID_ROI_LANGUAGE_ZAHARAN">
-        <requirements>!ID_ROI_LANGUAGE_ZAHARAN, ID_ROI_OPTION_LANGUAGES</requirements>
+        <requirements>ID_ROI_OPTION_LANGUAGES</requirements>
         <supports>Standard</supports>
         <description>
             <p>Typically spoken by the people of Zahara.</p>
         </description>
         <setters>
+            <set name="standard">true</set>
+            <set name="speakers">Human</set>
             <set name="script">Zaharan</set>
         </setters>
     </element>
