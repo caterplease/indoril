@@ -79,7 +79,7 @@
     <!--
         PATIENT SMITE
     -->
-    <element name="Patient Smite" type="Class Feature" source="Indoril" id="ID_ROI_CLASS_FEATURE_PALADIN_PATIENT_SMITE">
+    <element name="Patient Smite" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_PALADIN_PATIENT_SMITE">
         <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_PALADIN_PATIENT_SMITE</requirements>
         <description>
             <p>Starting at 1st level, when you cast a smite spell that requires concentration, the spell is not expended until you successfully hit a creature with a weapon attack.</p>
@@ -109,7 +109,7 @@
     <!--
         GREATER CHANNEL DIVINITY
     -->
-    <element name="Greater Channel Divinity" type="Class Feature" source="Indoril" id="ID_ROI_CLASS_FEATURE_PALADIN_GREATER_CHANNEL_DIVINITY">
+    <element name="Greater Channel Divinity" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_PALADIN_GREATER_CHANNEL_DIVINITY">
         <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_PALADIN_GREATER_CHANNEL_DIVINITY</requirements>
         <description>
             <p>Starting at 11th level, you gain <strong>one extra use</strong> of Channel Divinity.</p>
