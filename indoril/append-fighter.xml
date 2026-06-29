@@ -103,8 +103,7 @@
             </table>
             <h3>Maintained Armor</h3>
             <p>While weaing maintained armor, you gain a +1 bonus to AC.</p>
-            <p>Starting at 12th level, this bonus increases to +2.</p>
-            <p>Starting at 16th level, when you maintain armor, choose one damage type other than psychic damage. While wearing that armor, you have resistance to the chosen damage type.</p>
+            <p>Starting at 13th level, when you maintain armor, choose one damage type other than psychic damage. While wearing that armor, you have resistance to the chosen damage type.</p>
             <p>One medium or heavy armor made primary of metal can be maintained in this way.</p>
         </description>
         <sheet alt="Maintenance">
@@ -125,12 +124,14 @@
         <description>
             <p>Starting at 3rd level, you have <strong>3 uses</strong> of <strong>Second Wind</strong>.
             </p>
-            <p class="indent">You may regain <strong>one expended use</strong> after a short or long rest.</p>
+            <p>Instead of healing with <strong>Second Wind</strong>, you may expend a use to take the Dodge, Disengage, or Dash action.</p>
+            <p class="indent">You may regain <strong>all expended uses</strong> after a short or long rest.</p>
         </description>
         <sheet alt="Second Wind" action="Bonus Action" usage="{{second wind:usage}}/Rest">
             <description>
                 <p>You regain 1d10+{{level:fighter}} hp.</p>
-                <p>You may regain 1 charge on a short or long rest.</p>
+                <p>Instead of healing with <strong>Second Wind</strong>, you may expend a use to take the Dodge, Disengage, or Dash action.</p>
+                <p>You may regain all charges on a short or long rest.</p>
             </description>
         </sheet>
         <rules>
