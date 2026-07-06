@@ -11,7 +11,7 @@
         Allow selecting the Realms of Indoril
         Homebrew Rules, which will activate all relevant features.
     -->
-    <append name="Ranger" type="Class" source="Realms of Indoril" id="ID_WOTC_PHB_CLASS_RANGER">
+    <append name="Ranger" type="Class" source="Realms of Indoril" id="ID_WOTC_CLASSFEATURE_RANGER_FAVORED_ENEMY">
         <rules>
 
             <select type="Feat" name="Realms of Indoril Rules" supports="ID_ROI_RULES_RANGER" optional="true" />

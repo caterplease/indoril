@@ -12,7 +12,13 @@
         <requirements>ID_ROI_OPTION_LANGUAGES</requirements>
         <supports>Standard</supports>
         <description>
-            <p>Typically spoken by the people of Zahara.</p>
+            <p>Zaharan is spoken throughout Arabi, Anshir, Kemet, Qoran, Selucia, Numeda, Nubia, Tyrenis, Etia, and Axum. It is a remnant of the First Caliphate, which rose after the fall of the Old Indoran Empire.
+            </p>
+            <p>
+            The First Caliphate was founded by a man who claimed descent from the Netherene line, tracing his blood back to Indoril Netherene. He rose to power proclaiming that the world had to be united beneath a Netherene ruler in order to resist the coming void and the rise of the mad god Xolotl.
+            </p>
+            <p>Though the caliphate itself has long since fallen, its faith and traditions still survive as a sacred order devoted to guarding the Stone of Kabal. This divine artifact is said to have been placed upon the world by a Titan who sacrificed its own life to shield creation from divine influence.
+            </p>
         </description>
         <setters>
             <set name="standard">true</set>
@@ -20,5 +26,98 @@
             <set name="script">Zaharan</set>
         </setters>
     </element>
+    <element name="Merinnian" type="Language" source="Realms of Indoril" id="ID_ROI_LANGUAGE_MERINNIAN">
+        <requirements>ID_ROI_OPTION_LANGUAGES</requirements>
+        <supports>Standard</supports>
+        <description>
+            <p>Merinnian is the native language of Merinnia, a land that remained largely untamed by the Old Indoran Empire. Although most Merinnians are taught Indoran Common for trade and diplomacy, it was never the primary tongue of their people. Many dialects exist across Merinnia, and the true origins of the language's core structure have been lost to time.
+            </p>
+        </description>
+        <setters>
+            <set name="standard">true</set>
+            <set name="speakers">Human</set>
+            <set name="script">Merinnian</set>
+        </setters>
+    </element>
+    <element name="Draconic" type="Language" source="Realms of Indoril" id="ID_ROI_LANGUAGE_DRACONIC">
+        <requirements>ID_ROI_OPTION_LANGUAGES</requirements>
+        <supports>Standard</supports>
+        <description>
+            <p>Draconic is spoken by dragons, dragonkin, and many peoples of the eastern lands, particularly in Cathay, Koran, Hakora, and Nagaara. It is an ancient and powerful language, often associated with rulership, bloodlines, magic, and old imperial traditions. In many eastern courts, Draconic remains a language of ceremony, law, and noble inheritance.
 
+            </p>
+        </description>
+        <setters>
+            <set name="standard">true</set>
+            <set name="speakers">Dragons</set>
+            <set name="script">Draconic</set>
+        </setters>
+    </element>
+    <element name="Sylvan" type="Language" source="Realms of Indoril" id="ID_ROI_LANGUAGE_SYLVAN">
+        <requirements>ID_ROI_OPTION_LANGUAGES</requirements>
+        <supports>Standard</supports>
+        <description>
+            <p>Sylvan is the common tongue of fey creatures and those tied to Naevora’s Dream, also known as the Fae Wild. It is a strange and graceful language, often described as more emotional than precise. Tone, rhythm, and intent carry as much meaning as the words themselves, making it difficult for outsiders to fully master.
+            </p>
+        </description>
+        <setters>
+            <set name="standard">true</set>
+            <set name="speakers">Fae</set>
+            <set name="script">Sylvan</set>
+        </setters>
+    </element>
+    <element name="Orcish" type="Language" source="Realms of Indoril" id="ID_ROI_LANGUAGE_ORCISH">
+        <requirements>ID_ROI_OPTION_LANGUAGES</requirements>
+        <supports>Standard</supports>
+        <description>
+            <p>Orcish is spoken among the many orcish tribes, though countless dialects exist. Most tribes can understand one another, aside from certain regional words, war terms, and cultural expressions. The shared roots of Orcish date back to the great orcish migrations from the Oogi Badlands, before the War of Divinity scattered their people across the world.
+
+            </p>
+        </description>
+        <setters>
+            <set name="standard">true</set>
+            <set name="speakers">Orc</set>
+            <set name="script">Orcish</set>
+        </setters>
+    </element>
+    <element name="Volennian, Western Common" type="Language" source="Realms of Indoril" id="ID_ROI_LANGUAGE_VOLENNIAN">
+        <requirements>ID_ROI_OPTION_LANGUAGES</requirements>
+        <supports>Standard</supports>
+        <description>
+            <p>Volennian is spoken throughout the western lands, a continent never conquered by the Old Indoran Empire. While Indoran influence exists through trade and travel, Volennian remains the dominant language of the West. It is often called Western Common by foreigners, though native speakers usually refer to it simply as Volennian.
+            </p>
+        </description>
+        <setters>
+            <set name="standard">true</set>
+            <set name="speakers">Human</set>
+            <set name="script">Volennian</set>
+        </setters>
+    </element>
+    <element name="Elvish" type="Language" source="Realms of Indoril" id="ID_ROI_LANGUAGE_ELVISH">
+        <requirements>ID_ROI_OPTION_LANGUAGES</requirements>
+        <supports>Standard</supports>
+        <description>
+            <p>Elvish is most commonly spoken on the continent of Caelara. All elves possess an ancestral and inherent knowledge of the language, allowing them to speak it naturally, even if they were raised outside elven lands. Because of this, Elvish has remained remarkably consistent across generations, though regional accents and poetic traditions still vary between elven cultures.
+
+            </p>
+        </description>
+        <setters>
+            <set name="standard">true</set>
+            <set name="speakers">Elves</set>
+            <set name="script">Elvish</set>
+        </setters>
+    </element>
+    <element name="Indoran, Common" type="Language" source="Realms of Indoril" id="ID_ROI_LANGUAGE_INDORAN">
+        <requirements>ID_ROI_OPTION_LANGUAGES</requirements>
+        <supports>Standard</supports>
+        <description>
+            <p>Indoran is the most widely spoken language throughout the known lands. It is a surviving remnant of the Old Indoran Empire, whose reach once stretched across much of the world. Though the empire has long since fallen, its language remains the foundation of trade, diplomacy, scholarship, and daily life across many nations.
+            </p>
+        </description>
+        <setters>
+            <set name="standard">true</set>
+            <set name="speakers">Elves</set>
+            <set name="script">Human</set>
+        </setters>
+    </element>
 </elements>

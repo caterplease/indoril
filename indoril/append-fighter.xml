@@ -11,7 +11,7 @@
         Allow selecting the Realms of Indoril
         Homebrew Rules, which will activate all relevant features.
     -->
-    <append name="Fighter" type="Class" source="Realms of Indoril" id="ID_WOTC_PHB_CLASS_FIGHTER">
+    <append name="Fighter" type="Class" source="Realms of Indoril" id="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE">
         <rules>
 
             <select type="Feat" name="Realms of Indoril Rules" supports="ID_ROI_RULES_FIGHTER" optional="true" />
