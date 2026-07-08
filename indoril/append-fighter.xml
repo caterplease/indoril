@@ -120,7 +120,7 @@
         VETERAN'S RESOLVE
     -->
     <element name="Veteran's Resolve" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_FIGHTER_VETERANS_RESOLVE">
-        <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_VETERANS_RESOLVE</requirements>
+        <!-- <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_VETERANS_RESOLVE</requirements> -->
         <description>
             <p>Starting at 3rd level, you have <strong>3 uses</strong> of <strong>Second Wind</strong>.
             </p>
