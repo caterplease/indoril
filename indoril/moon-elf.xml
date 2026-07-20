@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Moon Elf</name>
+        <description>The Moon Elf subrace additions to the Realms of Indoril game series.</description>
+        <update version="1.0.0">
+            <file name="moon-elf.xml" url="https://raw.githubusercontent.com/caterplease/indoril/master/indoril/moon-elf.xml" />
+        </update>
+    </info>
+    <!--
+        Allow selecting the Realms of Indoril
+        Homebrew Rules, which will activate all relevant features.
+    -->
+    <append name="Elf" type="Race" source="Realms of Indoril" id="ID_RACE_ELF">
+        <description>
+            <div element="ID_ROI_SUB_RACE_MOON_ELF" />
+        </description>
+        <rules>
+            
+        </rules>
+    </append>
+
+    <element name="Moon Elf" type="Sub Race" source="Realms of Indoril" id="ID_ROI_SUB_RACE_MOON_ELF">
+        <supports>Elf</supports>
+        <description>
+            <p>
+                Moon Elves are the ancient forest-dwellers of Eluna, a secluded land of silver leaves, moonlit pools, root temples, living bridges and sacred trees. Their cities are grown rather than built, shaped through ritual, song and patient magic.
+            </p>
+            <p>
+                Moon Elves rarely leave Eluna, and those who do are often pilgrims, wardens, exiles, wanderers, diplomats, orrangers sent to recover something sacred. They are beautiful, strange, polite and unsettling to outsiders, especially because they treat words, promises and gifts as things with real power.
+            </p>
+            <p><strong><em>Ability Score Increase.</em></strong> Your Wisdom score increases by 1.</p>
+			<p><strong><em>Moonlit Vision.</em></strong> Your darkvision has a radius of 120 feet.</p>
+            <p><strong><em>Forest-Born Reverence.</em></strong> You have proficiency in Nature or Religion, your choice.</p>
+            <p><strong><em>Fey-Tongued.</em></strong> You can read, write, and speak Sylvan.</p>
+            <div element="ID_ROI_SUB_RACE_MOON_ELF_SILVERLEAF_STEP" />
+            <div element="ID_ROI_SUB_RACE_MOON_ELF_MOON_POOL_MAGIC" />
+            <div element="ID_ROI_SUB_RACE_MOON_ELF_OATH_OF_WORD_AND_GIFT" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Racial Trait" id="ID_INTERNAL_FEATURE_REPLACEMENT_DARKVISION" />
+            <grant type="Racial Trait" id="ID_ROI_SUB_RACE_MOON_ELF_WISDOM" level="1" />
+            <grant type="Vision" id="ID_VISION_MOONLITVISION" />
+            <grant type="Racial Trait" id="ID_ROI_SUB_RACE_MOON_ELF_FOREST_BORN_REVERENCE" level="1" />
+            <grant type="Language" id="ID_LANGUAGE_SYLVAN" />
+            <grant type="Racial Trait" id="ID_ROI_SUB_RACE_MOON_ELF_SILVERLEAF_STEP" />
+            <grant type="Racial Trait" id="ID_ROI_SUB_RACE_MOON_ELF_MOON_POOL_MAGIC" />
+            <grant type="Racial Trait" id="ID_ROI_SUB_RACE_MOON_ELF_OATH_OF_WORD_AND_GIFT" />
+        </rules>
+    </element>
+
+    <element name="Ability Score Increase (Wisdom)" type="Racial Trait" source="Realms of Indoril" id="ID_ROI_SUB_RACE_MOON_ELF_WISDOM">
+        <compendium display="false" />
+        <description>
+            <p>Your Wisdom score increases by 1</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <stat name="wisdom" value="1" alt="Moon Elf" />
+        </rules>
+    </element>
+	<!-- Vision elements -->
+ 	<element name="Darkvision" type="Vision" source="Aurora Legacy Essentials" id="ID_VISION_DARKVISION">
+		<requirements>!ID_VISION_SUPERIORDARKVISION,!ID_INTERNAL_FEATURE_REPLACEMENT_DARKVISION</requirements>
+		<description>
+			<p>Many creatures in the worlds of D&amp;D, especially those that dwell underground, have darkvision. Within a specified range, a creature with darkvision can see in darkness as if the darkness were dim light, so areas of darkness are only lightly obscured as far as that creature is concerned. However, the creature can’t discern color in darkness, only shades of gray.</p>
+		</description>
+		<sheet>
+			<description>You can see in dim light within {{darkvision:range}} feet of you as if it were bright light, and in darkness as if it were dim light.</description>
+		</sheet>
+		<rules>
+			<stat name="darkvision:range" value="60" bonus="base" />
+		</rules>
+	</element>
+    <element name="Moonlit Vision" type="Vision" source="Internal" id="ID_VISION_MOONLITVISION">
+		<description>
+			<p>Many creatures in the worlds of D&amp;D, especially those that dwell underground, have darkvision. Within a specified range, a creature with darkvision can see in darkness as if the darkness were dim light, so areas of darkness are only lightly obscured as far as that creature is concerned. However, the creature can’t discern color in darkness, only shades of gray.</p>
+		</description>
+		<sheet>
+			<description>You can see in dim light within {{darkvision:range}} feet of you as if it were bright light, and in darkness as if it were dim light.</description>
+		</sheet>
+		<rules>
+			<stat name="darkvision:range" value="120" bonus="base" />
+		</rules>
+	</element>
+    <element name="Forest-Born Reverence" type="Racial Trait" source="Realms of Indoril" id="ID_ROI_SUB_RACE_MOON_ELF_FOREST_BORN_REVERENCE">
+        <description>
+            <p>You have proficiency in Nature or Religion, your choice.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <select type="Proficiency" name="Skill Proficiency (Moon-Elf)" number="1" supports="ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_RELIGION" />
+        </rules>
+    </element>
+
+    <element name="Silverleaf Step" type="Racial Trait" source="Realms of Indoril" id="ID_ROI_SUB_RACE_MOON_ELF_SILVERLEAF_STEP">
+        <description>
+            <p>
+                You can move across nonmagical difficult terrain caused by plants, roots, undergrowth or natural forest terrain without spending extra movement.
+            </p>
+        </description>
+        <sheet>
+            <description>
+                <p>
+                    You can move across nonmagical difficult terrain caused by plants, roots, undergrowth or natural forest terrain without spending extra movement.
+                </p>
+            </description>
+        </sheet>
+    </element>
+
+    <element name="Moon Pool Magic" type="Racial Trait" source="Realms of Indoril" id="ID_ROI_SUB_RACE_MOON_ELF_MOON_POOL_MAGIC">
+        <description>
+            <p>
+                You know the druidcraft cantrip.
+            </p>
+            <p class="indent">Starting at 3rd level, you can cast Sleep once a day with this trait. You cannot cast Sleep in this manner again until you finish a long rest. Wisdom is your Spellcasting ability for this spell.</p>
+            <p class="indent">Starting at 5th level, you can cast Moonbeam once a day with this trait. You cannot cast Moonbeam in this manner again until you finish a long rest. Wisdom is your Spellcasting ability for this spell.</p>
+        </description>
+        <sheet>
+            <description level="3" usage="1/Long Rest">
+                <p>
+                    You can cast Sleep.
+                </p>
+            </description>
+            <description level="5" usage="1/Long Rest">
+                <p>
+                    You can cast Moonbeam.
+                </p>
+            </description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_DRUIDCRAFT" level="1" />
+            <grant type="Spell" id="ID_PHB_SPELL_SLEEP" level="3" />
+            <grant type="Spell" id="ID_PHB_SPELL_MOONBEAM" level="5" />
+        </rules>
+    </element>
+
+    <element name="Oath of Word and Gift" type="Racial Trait" source="Realms of Indoril" id="ID_ROI_SUB_RACE_MOON_ELF_OATH_OF_WORD_AND_GIFT">
+        <description>
+            <p>You have advantage on saving throws against being charmed.</p>
+            <p>
+                In addition, when you make a Charisma check involving promises, formal bargains, gifts, hospitality, names, fey etiquette, or sacred traditions, you can add 1d4 to the roll.
+            </p>
+            <p class="indent">
+                You can use this bonus a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.
+            </p>
+        </description>
+        <sheet>
+            <description usage="{{oath:uses}}/Long Rest">
+                <p>
+                    You have advantage on saving throws against being charmed, and can add 1d4 to Charisma checks involving promises, formal bargains, gifts, hospitality, names, fey etiquette, or sacred traditions.
+                </p>
+            </description>
+        </sheet>
+        <rules>
+            <stat name="oath:uses" value="proficiency" />
+        </rules>
+    </element>
+
+    <!--Feature Replacement Grants-->
+	<element name="Darkvision Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_DARKVISION" />
+
+</elements>
