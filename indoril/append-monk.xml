@@ -166,7 +166,7 @@
             <p>This increases to three times at 11th level</p>
         </description>
         <sheet>
-            <description level="5">Test You can attack twice, instead of once, whenever you take the Attack action on your turn.</description>
+            <description level="5">You can attack twice, instead of once, whenever you take the Attack action on your turn.</description>
             <description level="11">You can attack three times, instead of once, whenever you take the Attack action on your turn.</description>
         </sheet>
         <rules>
