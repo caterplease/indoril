@@ -111,13 +111,14 @@
         <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_SORCERER_RECKLESS_SORCERY</requirements>
         <description>
             <p>At 3rd level, you can draw on unstable magical power, granting yourself greater magical force at the cost of your own defense.</p>
-            <p>You have advantage on spell attack rolls</p>
+            <p>You have advantage on the first spell spell attack roll made each turn.</p>
+            <p class="indent">At 11th level, this applies to all spell attack rolls you make in a turn.</p>
             <p>When you cast a Sorcerer spell that forces a creature to make a saving throw, you can choose one target of the spell. That target has disadvantage on its first saving throw against the spell.</p>
             <p>For the duration, attack rolls against you have advantage.</p>
             <p class="indent">At 12th level, enemies no longer have advantage against you.</p>
             <p>You can end Reckless Sorcery at any time, no action required. You may not use this feature again until you finish a long rest.</p>
         </description>
-        <sheet action="Action" level="3" usage="{{reckless sorcery:count}}/Long Rest">
+        <sheet action="Bonus Action" level="3" usage="{{reckless sorcery:count}}/Long Rest">
             <description>
                 <p>
 					As an action, you can enter a state of Reckless Sorcery for 1 minute.
