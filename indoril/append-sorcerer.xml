@@ -121,7 +121,7 @@
         <sheet action="Bonus Action" level="3" usage="{{reckless sorcery:count}}/Long Rest">
             <description>
                 <p>
-					As an action, you can enter a state of Reckless Sorcery for 1 minute.
+					As a bonus action, you can enter a state of Reckless Sorcery for 1 minute.
                 </p>
             </description>
         </sheet>
