@@ -92,32 +92,40 @@
                 <tr>
                     <td> 1</td>
                     <td>Hearty Tales</td>
-                    <td class="left">When a creature receives your Bardic Inspiration, it gains temporary hit points equal to your <strong>Charisma</strong> modifier plus your proficiency bonus.</td>
+                    <td class="left">
+                        <p>When a creature receives your Bardic Inspiration, it gains temporary hit points equal to your <strong>Charisma</strong> modifier plus your proficiency bonus.</p>
+                    </td>
                 </tr>
                 <tr>
                     <td> 2</td>
                     <td>Heroic Tales</td>
-                    <td class="left">While a creature has your Bardic Inspiration, a roll of 1 on the d20 is not treated as an automatic failure for that creature.</td>
+                    <td class="left">
+                        <p>While a creature has your Bardic Inspiration and rolls a natural 1 on an attack roll or saving throw, it can instead expend the inspiration die to make the natural 1 into a critical success.</p>
+                    </td>
                 </tr>
                 <tr>
                     <td> 3</td>
                     <td>War Tales</td>
-                    <td class="left">When a creature with your Bardic Inspiration makes an attack roll, it can expend the Bardic Inspiration die to automatically hit with that attack.</td>
+                    <td class="left">
+                        <p>When a creature with your Bardic Inspiration misses an attack roll, it can expend the Bardic Inspiration die to remake the roll with advantage.</p>
+                        <p>If the creature already has advantage on the roll, it rolls four d20s instead of two and uses the highest result.</p>
+                    </td>
                 </tr>
                 <tr>
                     <td> 4</td>
                     <td>Inspiration Tales</td>
                     <td class="left">
-                        <p>When a creature with your Bardic Inspiration makes an attack roll, ability check, or saving throw, it can expend the Bardic Inspiration die to make the roll with advantage.</p>
-                        <p>If the creature already has advantage on the roll, it rolls three d20s instead of two and uses the highest result.</p>
+                        <p>When a creature with your Bardic Inspiration makes an ability check, it can expend the Bardic Inspiration die to remake the roll with advantage.
+                        </p>
+                        <p>If the creature already has advantage on the roll, it rolls four d20s instead of two and uses the highest result.</p>
                     </td>
                 </tr>
                 <tr>
                     <td> 5</td>
                     <td>Warding Tales</td>
                     <td class="left">
-                        <p>While a creature has your Bardic Inspiration, it has advantage on saving throws against being charmed, frightened, stunned, or paralyzed.</p>
-                        <p>If the creature fails a saving throw against one of these effects, it can expend your Bardic Inspiration die to reroll the saving throw. The creature must use the new roll.
+                        <p>When a creature with your bardic inspiration fails a saving throw, it can expend the Inspiration die to remake the roll with advantage.</p>
+                        <p>If the creature already has advantage on the roll, it rolls four d20s instead of two and uses the highest result.
                         </p>
                     </td>
                 </tr>
