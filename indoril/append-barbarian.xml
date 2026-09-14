@@ -45,11 +45,12 @@
     <element name="Relentless Momentum" type="Class Feature" source="Realms of Indoril" id="ID_ROI_CLASS_FEATURE_BARBARIAN_RELENTLESS_MOMENTUM">
         <requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_BARBARIAN_RELENTLESS_MOMENTUM</requirements>
         <description>
-            <p>Starting at 1st level, when your <strong>Rage</strong> is active, your speed increases by <strong>10 feet</strong>, your movement does not provoke opportunity attacks, and your first melee weapon attack on your turn deals bonus damage equal to your proficiency bonus.</p>
+            <p>Starting at 1st level, While your Rage is active, your speed increases by 10 feet. Additionally, your movement does not provoke opportunity attacks from a creature if you both enter and leave that creature’s melee reach during the same turn.</p>
+            <p>Once on each of your turns, when you hit a creature with a melee weapon attack, the attack deals additional damage equal to your proficiency bonus.</p>
         </description>
         <sheet>
             <description>
-                <p>When your <strong>Rage</strong> is active, your speed increases by <strong>10 feet</strong>, your movement does not provoke opportunity attacks, and your melee weapon attacks deal bonus damage equal to your proficiency bonus.</p>
+                <p>When your <strong>Rage</strong> is active, your speed increases by <strong>10 feet</strong>, your movement does not provoke opportunity attacks, and your first melee weapon attack/turn deals bonus damage equal to your proficiency bonus.</p>
             </description>
         </sheet>
     </element>
